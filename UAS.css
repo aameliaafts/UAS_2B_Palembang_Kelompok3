@@ -1,0 +1,565 @@
+/* ========== GLOBAL RESET ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Semua elemen akan menghitung padding dan border ke dalam lebar total */
+}
+body {
+  margin: 0; /* Menghapus jarak default body */
+  font-family: 'Inter', sans-serif; /* Mengatur font seluruh halaman */
+  background: url(https://indonesiakaya.com/wp-content/uploads/2020/10/jembatan_ampera_1200.jpg)  no-repeat center center fixed; 
+  /* Latar belakang gambar tetap saat scroll dan posisinya di tengah */
+  background-size: cover; /* Gambar latar akan menutupi seluruh area */
+  color: #e4f7d2; /* Warna default teks (menu) */
+  min-height: 100vh; /* Tinggi minimal layar 100% dari tinggi viewport */
+  display: flex; /* Membuat kontainer utama fleksibel */
+  flex-direction: column; /* Semua elemen di dalam body ditumpuk secara vertikal */
+}
+a {
+  text-decoration: none; /* Hilangkan garis bawah default */
+  color: inherit; /* Warna link mengikuti warna teks di parent */
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #b75018;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffed85;
+  border-radius: 4px;
+}
+
+/* ========== KONTAINER PUSAT ========== */
+.container {
+  max-width: 1200px; /* Lebar maksimal konten agar tidak terlalu lebar */
+  padding: 0 24px; /* Spasi kanan-kiri */
+  text-align: center; /* Teks di dalam akan rata tengah */
+}
+
+/* HEADER */
+.header {
+  background-color: rgba(252, 91, 47, 0.9); /*warna header palembang*/
+  position:sticky; /*Header tetap di atas saat discroll*/
+  top: 0; /*Menempel di atas*/
+  display:flex;
+  padding: 1rem; /*padding sekeliling*/
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /*bayangan di bawah header*/
+  text-align: center;
+  justify-content: center;
+}
+.header-container {
+  display: flex; /* Atur elemen horizontal */
+  justify-content: space-between; /* Antara logo dan nav menu diberi jarak maksimal */
+  align-items: center; /* Posisikan vertikal rata tengah */
+  width: 100%; /* Memenuhi lebar header */
+}
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #fae7ef, #ffad4a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Buat efek tulisan transparan berwarna gradasi */
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /*Jarak Antar menu*/
+}
+.nav-link {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s; /*animasi hover*/
+}
+.nav-link:hover {
+  background: rgba(114, 71, 78, 0.5); /*warna hover menu*/
+}
+
+/* HERO */
+.main-content {
+  flex: 1;  /*Sebagai kontaiter fleksibel*/
+  display: flex;  /*Menyusun kolom secara vertikal*/
+  flex-direction: column; /*semua isi ditaruh di tengah secara horizontal*/
+  align-items: center; /*Bisa diperluas sesuai ruang yg tersedia di paret-nya*/
+
+}
+.hero {
+  text-align: center;
+  padding: 4rem 2rem; /* Atas bawah 4rem, kanan kiri 2rem */
+  background: rgba(255, 197, 155, 0.9); /* Warna latar belakang semi transparan */
+  box-shadow: 0 8px 24px rgba(255,182,193,0.2); /* Bayangan lembut */
+  border-radius: 20px; /* Sudut bulat */
+  margin: 2rem auto; /* Margin atas bawah */
+  max-width: 1000px; /* Batas lebar maksimal */
+}
+.hero h1 {
+  font-size: 80px; /*Ukuran text selamat datang*/
+  margin-bottom: 1rem;
+  color: #eb5c31; /*Warna*/
+  font-family: 'Times New Roman', Times, serif;
+}
+.hero h2 {
+  font-size: 50px;
+  margin-bottom: 1rem;
+  color: #987373;
+}
+.hero p {
+  font-size: 1.2rem;  /*Ukuran teks setelah selamat datang*/
+  color: hsl(0, 0%, 96%);
+  margin-bottom: 2rem;
+}
+.btn-primary {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #efb866, #ff7207); /*warna*/
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #c48e9f, #c88b28);
+}
+
+/* ========== FEATURES ========== */
+.features {
+  padding: 1rem 0 1rem; /*Memberi ruang kosong jarak atas dan bawah*/
+  text-align: center; /*Membuat seua texs didalamnya (termasuk judul rata tengah)*/
+}
+.section-title { /*title About PALEMBANG*/  
+  font-size: 2rem; /*Besar Text jadi 2x ukuran dasar*/
+  margin-bottom: 2rem; /*Menentukan jarak title about palembang dan baris kolom foto*/
+  display: inline-flex; /*Menjadikan elemen sejajar horizontal dan bisa diatur dengan aligent items*/
+  align-items: center; /*Posisikan isi vertikal di tengah*/
+  padding: 0.5rem 1rem; /*Memberi ruang dalam elemen atas-bawah 0.5, kanan kiri 1rem*/
+  border-radius: 30px; /*lengkungan*/
+  color: rgb(255, 255, 255); /*warna teks*/
+  font-weight: bold; /*membuat teks tebal*/
+  transition: 0.3s ease;  /*Jikka ada berubahan gaya (hover, dll) animasinya halus dalam 0.3 detik*/
+  background-color: #ec8f0bcc; /*warna latar elakangnya orange transparant*/
+  font-style:normal; /*font tisak miring*/
+}
+.features-grid {
+  display: grid; /*mengaktifkan sistem grid*/
+  grid-template-columns: repeat(3, 1fr); /*baris kolo 3 ke kanan dengan lebar 1fr menu home*/
+  gap: 2rem;            /*Jarak Antar Kolom*/
+  max-width: 1000px;      /* batas maksimal kontaiter lebar grid */
+  margin: 0 auto;          /* agar posisinya ke tengah */
+}
+.feature-card { /*kartu isi*/
+  background: #edc3a8; /*Warna latar belakag kartu*/
+  border-radius: 30px; /*Sudut kartu membulat*/
+  padding: 1.5rem; /*Ruang dalam setiap isi (foto)*/
+  box-shadow: 0 8px 20px rgba(255,182,193,0.3); /*Bayangan di bawah kartu supaya ada efek 3D*/
+  transition: transform 0.3s ease; /*Animaasi saat berubah transformasi*/
+}
+
+
+.feature-card:hover {
+  transform: translateY(-5px); /*saat mouse diarahkan ke kartu maka Kartu akan naik sedikit ke atas pop up (efek mengambang)*/
+}
+.feature-icon {
+  font-size: 48px; /*Besar ukuran Ikon*/
+  color: #f17342; /*warna icon*/
+}
+.feature-card h3 {
+  margin-bottom: 0.5rem; /*Jarak antara judul dan pargraf deskripsi*/
+  color: hsla(15, 100%, 25%, 0.633); /*judul bawah icon menu home*/
+}
+.feature-card p {
+  color: #ffffff; /*Warna teks deskripsi jadi putih agar kontras dengan bacground*/
+}
+
+/* ========== FOOTER ========== */
+.footer {   /*Merujuk pada bagian bawah i love palembang itu*/
+  background: rgba(244, 98, 30, 0.9); /*warna orange transparant*/
+  padding: 1rem 0; /*Jarak antara atas dan bawah*/
+  font-size: 0.9rem; /*Ukuran font lebih kecil*/
+  
+}
+.footer-content { /*Mengatur konten dalam footer agar tersusun secara horizontal dan responsif*/
+  display: flex; /*isi rata kanan*/
+  justify-content: end; /*isi rata kanan*/
+  align-items: center; /*Isi sejajar vertikal*/
+  flex-wrap:wrap; /*Lakau sempit, bisa turun ke baris berikutnya*/
+  gap: 1rem; /*jarak antar elemen*/
+}
+.footer p { margin: 0; } /*menghilangkan margin default dari <P>*/
+.social-links {
+  display: flex; 
+  gap: 1rem; /*jarak antar ikon sosmed*/
+}
+.social {
+  display: inline-flex; /*sejajar horizontal, namun dengan properti inline*/
+  align-items: center; /*isi (teks/ikon) sejajar tengah vwrtikal*/
+  padding: 0.5rem 1rem; /*ruang dalam: atas bawah 0.5 rem, kanan-kiri 1rem*/
+  border-radius: 6px; /*sudut tombol membulat*/
+  color: #fafafa; /*warna teks putih*/
+  font-weight: bold; /*teks tebal*/
+  transition: 0.3s ease; /*animasi transisi saat hover*/
+}
+.social:hover {
+  opacity: 0.9; /*Saat kursor diarahkan, elemen menjadi sedikit transparant*/
+}
+.whatsapp { background-color: #25D366; } /*warna hijau wa*/
+.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+} /*gradasi khas tombol instagram*/
+
+
+/*=====ABOUT======*/ /*provile maha siswa*/
+
+.main-about {
+  flex: 1;  /*Sebagai kontaiter fleksibel*/
+  display: flex;  /*Menyusun kolom secara vertikal*/
+  flex-direction: column; /*semua isi ditaruh di tengah secara horizontal*/
+  align-items: center; /*Bisa diperluas sesuai ruang yg tersedia di paret-nya*/
+
+}
+.about-section { 
+  display: grid; /*menggunakan gird layout*/
+  grid-template-columns: repeat(3, 600px); /* 3 kolom, lebar dengan lebar 250px */
+  gap: 20px; /* jarak antar kartu */
+  margin-top: 40px; /*jarak dari elemen atasnya*/
+}
+
+.about-card {
+  background: #fabc8a; /*warna latar belakang orange*/
+  padding: 20px; /*ruang dalam kartu*/
+  border-radius: 12px; /*sudut membulat*/
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /*bayangan lembut di belakang*/
+  text-align: center; /*teks di dalam kartu rata tengah*/
+  box-sizing: border-box; /*padding tetap di dalam ukuran kotak*/
+
+}
+
+.about-photo {
+  width: 100%; /*Menentukan Besar Foto*/
+  height: auto; /*tinggi menyesuaikan otoatis */
+  border-radius: 12px; /*sudut foto tak lancip*/
+  margin-bottom: 12px; /*Jarang dari foto ke teks*/
+}
+
+.about-text {
+  font-size: 16px; /*Ukuran Foundnya*/
+  line-height: 1.6; /*jarak baris teks*/
+  color: #333; /*warna teks*/
+}
+
+.social-links-card {
+  margin-top: 12px;         /* Jarak antara teks dan tombol sosmed */
+  display: flex;            /* Tombol sosial disusun horizontal */
+  justify-content: center;  /* Posisi tombol di tengah */
+  gap: 15px;                /* Jarak antar tombol */
+}
+
+.social-links-card a {
+  text-decoration: none;                 /* Menghilangkan garis bawah link */
+  padding: 8px 18px;                     /* Ruang dalam tombol */
+  border-radius: 8px;                    /* Sudut tombol membulat */
+  font-size: 14px;                       /* Ukuran huruf tombol */
+  font-weight: bold;                     /* Huruf tebal */
+  color: rgb(250, 249, 249);                        /* Warna teks putih */
+  transition: transform 0.2s ease, opacity 0.2s ease;         /* Animasi saat hover */
+}
+
+
+/* Tombol WhatsApp */
+.wa-link {
+  background-color: #25D366; /* Tombol WA berwarna hijau */
+}
+.wa-link:hover {
+  background-color: #1ebe5d; /* Warna hijau lebih gelap saat hover */
+  transform: scale(1.05);    /* Membesar sedikit saat disentuh */
+}
+
+
+/* Tombol Instagram dengan gradasi */
+.ig-link {
+  background: linear-gradient(45deg,  #feda75,  #fa7e1e,  #d62976,  #962fbf,  #4f5bd5
+  ); /* Gradasi warna khas Instagram */
+}
+.ig-link:hover {
+  opacity: 0.9;            /* Sedikit transparan saat hover */
+  transform: scale(1.05);  /* Membesar sedikit saat hover */
+}
+
+
+/*=======FOTO========*/
+/*Menggunakan features-section, features-card, features-photo, about-teks, social-links-card*/
+.main-foto {
+  flex: 1;  /*Sebagai kontaiter fleksibel*/
+  display: flex;  /*Menyusun kolom secara vertikal*/
+  flex-direction: column; /*semua isi ditaruh di tengah secara horizontal*/
+  align-items: center; /*Bisa diperluas sesuai ruang yg tersedia di paret-nya*/
+
+}
+
+.Fotoku {
+  padding: 1rem 0 1rem; /*Memberi ruang kosong jarak atas dan bawah*/
+  text-align: center; /*Membuat seua texs didalamnya (termasuk judul rata tengah)*/
+}
+.Foto-title { /*title About PALEMBANG*/  
+  font-size: 2rem; /*Besar Text jadi 2x ukuran dasar*/
+  margin-bottom: 2rem; /*Menentukan jarak title about palembang dan baris kolom foto*/
+  display: inline-flex; /*Menjadikan elemen sejajar horizontal dan bisa diatur dengan aligent items*/
+  align-items: center; /*Posisikan isi vertikal di tengah*/
+  padding: 0.5rem 1rem; /*Memberi ruang dalam elemen atas-bawah 0.5, kanan kiri 1rem*/
+  border-radius: 30px; /*lengkungan*/
+  color: rgb(255, 255, 255); /*warna teks*/
+  font-weight: bold; /*membuat teks tebal*/
+  transition: 0.3s ease;  /*Jikka ada berubahan gaya (hover, dll) animasinya halus dalam 0.3 detik*/
+  background-color: #ec8f0bcc; /*warna latar elakangnya orange transparant*/
+  font-style:normal; /*font tisak miring*/
+}
+
+.features-foto {
+  display: grid;                           /* Gunakan grid layout */
+  grid-template-columns: repeat(4, 300px); /* 4 kolom dengan lebar tetap 300px */
+  gap: 2rem;                               /* Jarak antar item */
+  max-width: 1000px;                       /* Batas lebar maksimum keseluruhan grid */
+  justify-content: center;                /* Seluruh grid diposisikan ke tengah */
+}  
+
+.feature-fotoku { /*kartu isi*/
+  background: #edc3a8; /*Warna latar belakag kartu*/
+  border-radius: 30px; /*Sudut kartu membulat*/
+  padding: 1.5rem; /*Ruang dalam setiap isi (foto)*/
+  box-shadow: 0 8px 20px rgba(255,182,193,0.3); /*Bayangan di bawah kartu supaya ada efek 3D*/
+  transition: transform 0.3s ease; /*Animaasi saat berubah transformasi*/
+}
+
+
+.feature-fotoku:hover {
+  transform: translateY(-5px); /*saat mouse diarahkan ke kartu maka Kartu akan naik sedikit ke atas pop up (efek mengambang)*/
+}
+.feature-icon {
+  font-size: 48px; /*Besar ukuran Ikon*/
+  color: #f17342; /*warna icon*/
+}
+.feature-fotoku h3 {
+  margin-bottom: 0.5rem; /*Jarak antara judul dan pargraf deskripsi*/
+  color: hsla(15, 100%, 25%, 0.633); /*judul bawah icon menu home*/
+}
+.feature-fotoku p {
+  color: #ffffff; /*Warna teks deskripsi jadi putih agar kontras dengan bacground*/
+}
+
+/*======PROVILE=======*/
+
+.features-foto1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsif & rapi */
+  gap: 2rem;
+  max-width: 1000px;
+  justify-content: center;
+  margin: 0 auto; /* tengah di parent */
+  padding: 2rem 0; /* beri jarak atas bawah */
+}
+
+.feature-card1 {
+  background: #edc3a8;
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(255,182,193,0.3);
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-card1 img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.feature-card1 h3 {
+  margin-bottom: 0.5rem;
+  color: #e66438;
+  font-size: px;
+}
+
+.feature-card1 p {
+  color: #6d4c41;
+  margin-bottom: 1rem;
+}
+
+.feature-card1 a {
+  margin-top: auto;
+}
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 197, 155, 0.9);
+  box-shadow: 0 8px 24px rgba(255,182,193,0.2);
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+.hero1 h1 {
+  font-size: 30px; /*Sejarah kota palembang*/
+  margin-bottom: 1rem;
+  color: #eb5c31;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+.map-container {
+  margin-top: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fffbe9; /* warna latar belakang */
+  box-shadow: 0 16px 48px 0 rgba(255,182,193,0.5); /* efek nimbul lebih besar */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 0;
+}
+
+.hero1 {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 197, 155, 0.9);
+  box-shadow: 0 8px 24px rgba(255,182,193,0.2);
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+
+/* ========== MAIN NEWS LAYOUT ========== */
+.news-main {
+  flex: 1;
+  padding: 40px 20px 40px; /* dikurangi dari 80px agar h1 lebih dekat ke header */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.news-section {
+  max-width: 1000px;
+  width: 100%;
+}
+.news-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #facc15;
+  margin-top: 0px; /* sebelumnya 5px, dikurangi agar lebih dekat ke header */
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+
+/* ========== GRID LAYOUT ========== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* ========== NEWS CARD ========== */
+.news-card {
+  background-color: #efccac;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #000;
+}
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.news-body {
+  padding: 16px 20px;
+  background-color: #facca8d5;
+  color: #000;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.news-title {
+  font-size: 1.3rem;
+  color: #1f2937;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.news-text {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.news-link {
+  color: #6366f1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.news-link:hover {
+  color: #4338ca;
+}
+
+/* ========== GALERI VIDEO ========== */
+
+.main-video {
+  flex: 1;  /*Sebagai kontaiter fleksibel*/
+  display: flex;  /*Menyusun kolom secara vertikal*/
+  flex-direction:column; /*semua isi ditaruh di tengah secara horizontal*/
+  align-items:center; /*Bisa diperluas sesuai ruang yg tersedia di paret-nya*/
+  
+}
+
+.video-gallery {
+  display: grid;                           /* Gunakan grid layout */
+  grid-template-columns: repeat(4, 300px); /* 4 kolom dengan lebar tetap 300px */
+  gap: 2rem;                               /* Jarak antar item */
+  max-width: 1000px;                       /* Batas lebar maksimum keseluruhan grid */
+  justify-content: center;                /* Seluruh grid diposisikan ke tengah */
+}
+.video-card {
+  background-color: #edc6a2;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  border-radius: 8px;
+}
+
+.video-card h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 6px;
+  color: #c83a1a;
+}
+
+.video-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+}
